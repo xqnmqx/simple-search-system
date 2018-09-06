@@ -10,7 +10,6 @@ import javax.persistence.Table
 @Entity
 @Table(name = "users")
 @Indexed
-@NoArg
 internal data class User(
         @Id
         val id: Long,
