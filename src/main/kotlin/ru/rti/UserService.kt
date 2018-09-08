@@ -1,16 +1,11 @@
 package ru.rti
 
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import javax.transaction.Transactional
 
 @Service
 @Transactional
-internal class UserService(
-        @Autowired
-        val userRepository: UserRepository,
-        @Autowired
-        val userSearch: UserSearch) {
+internal class UserService(private val userRepository: UserRepository, private val userSearch: UserSearch) {
 
     fun findAll(): List<User> {
         return userRepository.findAll()

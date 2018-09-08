@@ -1,11 +1,10 @@
 package ru.rti
 
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-internal class UserController(@Autowired val userService: UserService) {
+internal class UserController(private val userService: UserService) {
 
     @GetMapping("/users")
     fun getAll(): List<User> {
