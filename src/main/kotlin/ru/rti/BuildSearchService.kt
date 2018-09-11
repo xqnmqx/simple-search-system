@@ -19,7 +19,7 @@ class BuildSearchService(
             val fullTextEntityManager = Search.getFullTextEntityManager(entityManager)
             fullTextEntityManager.createIndexer().startAndWait()
         } catch (e: InterruptedException) {
-            println("An error occurred trying to build the serach index: " + e.toString())
+            println("An error occurred trying to build the search index: " + e.toString())
         }
     }
 }
