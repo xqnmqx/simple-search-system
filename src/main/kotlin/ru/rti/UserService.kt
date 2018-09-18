@@ -14,4 +14,8 @@ internal class UserService(private val userRepository: UserRepository, private v
     fun search(text: String): List<User> {
         return userSearch.searchUsers(text)
     }
+
+    fun saveUser(user: User): User {
+        return userRepository.save(user)
+    }
 }

@@ -9,6 +9,15 @@ spring.datasource.username=postgres
 spring.datasource.password=postgres
 spring.datasource.driver-class-name=org.postgresql.Driver
 ```
+
+Or prepared H2 (Default):
+```
+spring.datasource.url=jdbc:h2:file:~/test
+spring.datasource.username=sa
+spring.datasource.password=
+spring.datasource.driver-class-name=org.h2.Driver
+```
+
 DDL:
 ```sql
 CREATE TABLE public.users
@@ -33,13 +42,26 @@ To run:
 ```
 
 ## Testing
+Search with text
 ```bash
  curl localhost:8080/users/search?text=test -v
 ```
 
+Search all users
 ```bash
 curl localhost:8080/users/search -v
 ```
+
+Insert new user
+```bash
+curl -X POST \
+  http://localhost:8080/users \
+  -H 'content-type: application/json' \
+  -d '{
+	"name":"test-user-1"
+}'
+```
+
 
 ## Thanks to
 https://blog.codecentric.de/en/2017/06/kotlin-spring-working-jpa-data-classes/
