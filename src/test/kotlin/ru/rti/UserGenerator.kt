@@ -7,7 +7,7 @@ import kotlin.collections.ArrayList
 
 fun main(args: Array<String>) {
     val url = URI("http://localhost:8080/users")
-    for (i in 1..1000L) {
+    for (i in 1..100L) {
         postUser(url, i)
     }
 }
@@ -16,7 +16,7 @@ internal fun genUser(id: Long): User {
     return User(
             id, names[Random().nextInt(names.size)],
             surnames[Random().nextInt(surnames.size)],
-            "+7-999-999-99-99", Date())
+            "+7-999-999-99-99")
 }
 
 internal fun postUser(url: URI, id: Long): Unit {
@@ -173,50 +173,3 @@ val surnames = listOf(
         "Щербаков",
         "Блинов",
         "Колесников")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

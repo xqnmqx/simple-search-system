@@ -2,7 +2,6 @@ package ru.rti
 
 import org.hibernate.search.annotations.Field
 import org.hibernate.search.annotations.Indexed
-import java.util.*
 import javax.persistence.Entity
 import javax.persistence.Id
 import javax.persistence.Table
@@ -18,6 +17,4 @@ internal data class User(
         @Field
         val surname: String,
         @Field
-        val phoneNumber: String,
-        @Field
-        val birthDate: Date)
+        val phoneNumber: String)
