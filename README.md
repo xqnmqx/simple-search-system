@@ -24,7 +24,8 @@ CREATE TABLE public.users
 (
     id bigint,
     name character varying(255),
-    role character varying(255)
+    surname character varying(255),
+    phone_number character varying(255)
 );
 ```
 
